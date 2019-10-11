@@ -1,0 +1,15 @@
+@import "../base/base";
+
+
+
+    button, .button 
+    {
+       @include button($color-blue-dark);
+    }
+    button:hover,
+    .button:hover,
+    button:focus-within,
+    .button:focus-within {
+        color:$color-white;
+        background-color:$color-blue-light;
+    }

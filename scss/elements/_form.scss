@@ -1,0 +1,93 @@
+
+@import "../base/base";
+
+.header__preheader__right__search-form{
+    position: absolute;
+    top: 1.8rem;
+    right: 18%;
+    display: none;
+    padding: 1rem 0;
+
+    &::before
+    {
+        position: absolute;
+        top: 0;
+        display: block;
+        width: 0;
+        height: 0;
+        content: "";
+        border-top: 0.5rem solid $color-blue-dark;
+        border-right:0.5rem solid transparent;
+        border-left: 0.5rem solid transparent;
+        right: 0.8rem;
+    }
+}
+
+
+.form {
+    position: relative;
+    display: block;
+    overflow: inherit;
+}
+.form--search {
+    @include display_flex(row,nowrap);
+}
+
+.form--search .form__item {
+    height: 2rem;
+    margin-bottom: 0;
+}
+.form .form__item {
+    display: block;
+    clear: both;
+    margin-bottom: 1.25rem;
+}
+
+.form .form__item label {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: #484848;
+    font-weight: 900;
+}
+
+.form input[type="text"], .form .form__textarea {
+    width: 100%;
+    max-width: 100%;
+    color: $color-black;
+    border: 1px solid $color-grey-light;
+    background-color: $color-white;
+    box-shadow: none;
+}
+
+.form .form__input {
+    position: relative;
+    display: inline-flex;
+    justify-content: flex-start;
+    padding: 0.25rem 0.5rem;
+    vertical-align: middle;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.form--search .form__item .form__input, .form--search .form__item .button--submit {
+    box-sizing: border-box;
+    height: 2rem;
+}
+.form--search .button--submit {
+    padding: 0.52rem;
+    &:hover
+    {
+        background: $color-blue-light;
+    }
+}
+
+.header__preheader__right__search-form .search-form__close {
+    position: absolute;
+    top: 30%;
+    right: -1.5rem;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    background: url(../images/close.svg) no-repeat center center;
+    background-size: 0.75rem;
+}

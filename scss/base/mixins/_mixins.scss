@@ -1,0 +1,43 @@
+//mixins to make page responsive by setting up breakpoints
+
+ @mixin breakpoint($point) {
+  @if $point == "extra-small" {
+    @media screen and (max-width:574px) { @content ; }
+    }
+   @else if $point == "small" {
+     @media screen and (min-width: 575px) and (max-width:767px) { @content ; }
+  }
+  @else if $point == "medium" {
+    @media screen and (min-width: 768px) and (max-width:991px) { @content ; }
+ }
+   @else if $point == "large" {
+     @media screen and (min-width: 992px) { @content ; }
+  }
+    @else if $point == "extra-large" {
+     @media screen and (min-width: 1200px) { @content ; }
+  }
+}
+
+@mixin button($btn_color) 
+{
+  transition: .25s all ease-in-out;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: $color-white;
+  border: none;
+  background-color: $btn_color;
+}
+
+
+@mixin display_flex($flex-direc,$flex-wrap)
+{
+  display: flex;
+  flex-direction:$flex-direc;
+  flex-wrap: $flex-wrap;
+}
