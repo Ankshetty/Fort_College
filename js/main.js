@@ -6,6 +6,9 @@ document.getElementById("quickBtn").addEventListener("click", function() {
     document.getElementById('quicklinks').style.display == "block" ? (quickDiv.style.display = "none") && (searchDiv.style.display = "none" ) :
     (quickDiv.style.display = "block")&&(searchDiv.style.display = "none" ); 
 
+
+    ////same logic...doesnt work with if else!
+
     // if(document.getElementById('quicklinks').style.display == "none" )
     // {
     //   quickDiv.style.display = "block" ;
