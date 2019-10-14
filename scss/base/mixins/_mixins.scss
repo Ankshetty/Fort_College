@@ -2,10 +2,10 @@
 
  @mixin breakpoint($point) {
   @if $point == "extra-small" {
-    @media screen and (max-width:574px) { @content ; }
+    @media screen and (max-width:576px) { @content ; }
     }
    @else if $point == "small" {
-     @media screen and (min-width: 575px) and (max-width:767px) { @content ; }
+     @media screen and (min-width: 577px) and (max-width:767px) { @content ; }
   }
   @else if $point == "medium" {
     @media screen and (min-width: 768px) and (max-width:991px) { @content ; }
@@ -40,4 +40,13 @@
   display: flex;
   flex-direction:$flex-direc;
   flex-wrap: $flex-wrap;
+}
+
+@mixin rgba-background($hexcolor, $opacity) {
+  background-color: $hexcolor;
+  background-color: rgba($hexcolor, $opacity); 
+}
+@mixin rgba-border($hexcolor, $opacity) {
+  border-color: $hexcolor;
+  border-color: rgba($hexcolor, $opacity); 
 }

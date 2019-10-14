@@ -1,25 +1,10 @@
-
-@import "../base/base";
-
-.header__preheader__right__search-form{
-    position: absolute;
-    top: 1.8rem;
-    right: 18%;
+.header__preheader__right__search-form {
     display: none;
     padding: 1rem 0;
-
-    &::before
-    {
+    @include breakpoint(large) {
         position: absolute;
-        top: 0;
-        display: block;
-        width: 0;
-        height: 0;
-        content: "";
-        border-top: 0.5rem solid $color-blue-dark;
-        border-right:0.5rem solid transparent;
-        border-left: 0.5rem solid transparent;
-        right: 0.8rem;
+        top: 1.8rem;
+        right: 18%;
     }
 }
 
@@ -28,56 +13,69 @@
     position: relative;
     display: block;
     overflow: inherit;
+
+    .form__item {
+        display: block;
+        clear: both;
+        margin-bottom: 1.25rem;
+
+        label {
+            display: block;
+            margin-bottom: 0.25rem;
+            color: #484848;
+            font-weight: 900;
+        }
+    }
+
+    input[type="text"],
+    .form__textarea {
+        width: 100%;
+        max-width: 100%;
+        color: $color-black;
+        border: 1px solid $color-light-gray;
+        background-color: $color-white;
+        box-shadow: none;
+    }
+
+    .form__input {
+        position: relative;
+        display: inline-flex;
+        justify-content: flex-start;
+        padding: 0.25rem 0.5rem;
+        vertical-align: middle;
+        font-size: 1rem;
+        line-height: 1;
+    }
 }
+
 .form--search {
-    @include display_flex(row,nowrap);
-}
+    @include display_flex(row, nowrap);
 
-.form--search .form__item {
-    height: 2rem;
-    margin-bottom: 0;
-}
-.form .form__item {
-    display: block;
-    clear: both;
-    margin-bottom: 1.25rem;
-}
+    .form__item {
+        height: 2rem;
+        margin-bottom: 0;
 
-.form .form__item label {
-    display: block;
-    margin-bottom: 0.25rem;
-    color: #484848;
-    font-weight: 900;
-}
+        .form__input {
+            box-sizing: border-box;
+            height: 2rem;
+        }
 
-.form input[type="text"], .form .form__textarea {
-    width: 100%;
-    max-width: 100%;
-    color: $color-black;
-    border: 1px solid $color-grey-light;
-    background-color: $color-white;
-    box-shadow: none;
-}
+        .button--submit {
+            box-sizing: border-box;
+            height: 2rem;
+            padding: 0.52rem;
 
-.form .form__input {
-    position: relative;
-    display: inline-flex;
-    justify-content: flex-start;
-    padding: 0.25rem 0.5rem;
-    vertical-align: middle;
-    font-size: 1rem;
-    line-height: 1;
-}
+            &:hover {
+                background: $color-strong-blue;
+            }
 
-.form--search .form__item .form__input, .form--search .form__item .button--submit {
-    box-sizing: border-box;
-    height: 2rem;
-}
-.form--search .button--submit {
-    padding: 0.52rem;
-    &:hover
-    {
-        background: $color-blue-light;
+            border: 1px solid $color-white;
+
+            @include breakpoint(large) {
+                border: none;
+            }
+
+        }
     }
 }
 
@@ -90,4 +88,5 @@
     cursor: pointer;
     background: url(../images/close.svg) no-repeat center center;
     background-size: 0.75rem;
+
 }

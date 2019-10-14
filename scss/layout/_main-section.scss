@@ -1,105 +1,102 @@
-@import "../base/base";
-
-.main-content 
-{
+.main-content {
     display: flex;
     justify-content: space-between;
-}
-.main-content h1,.main-content h2 {
-    position: relative;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    letter-spacing: 0.2rem;
-    color: $color-blue-dark;
-    font-family: $font-fam-alfa;
-}
 
-@import "../components/components";
-@import "../elements/elements";
+    h1,
+    h2 {
+        position: relative;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        letter-spacing: 0.2rem;
+        color: $color-dark-blue;
+        font-family: $font-fam-alfa;
+    }
+
+    li {
+        font-family: $font-fam-roboto;
+    }
+
+    p {
+        margin-bottom: 1rem;
+        font-family: $font-fam-roboto;
+
+    }
+
+    figure {
+        max-width: 25rem;
+    }
+
+    .main-content__area {
+        flex: 1;
+        padding-left: 1.5rem;
+        margin: 0 0 1.7rem 0;
+
+        @include breakpoint(medium) {
+            flex-basis: 100%;
+            padding-left: 0rem;
+        }
+
+        @include breakpoint(small) {
+            flex-basis: 100%;
+            padding-left: 0rem;
+        }
+
+        @include breakpoint(extra-small) {
+            flex-basis: 100%;
+            padding-left: 0rem;
+        }
+    }
+
+    .community * {
+        color: $color-white;
+    }
+
+}
 
 .layout-container.main-content {
-    padding:2rem 3rem;
+    padding: 2rem 3rem;
     flex-wrap: wrap;
 }
 
-@import "aside";
-
-
-.main-content p, .main-content li {
-    font-family: $font-fam-roboto;
-}
-
-.main-content .main-content__area {
-    flex: 1;
-    padding-left: 1.5rem;
-    margin: 0 0 1.7rem 0;
-    @include breakpoint(medium)
-    {
-        flex-basis: 100%;
-    }
-    @include breakpoint(small)
-    {
-        flex-basis: 100%;
-
-    }
-    @include breakpoint(extra-small)
-    {
-        flex-basis: 100%;
-
-    }
-}
-.main-content p {
-    margin-bottom: 1rem;
-}
-.main-content p, .main-content li {
-    font-family: $font-fam-roboto;
-}
-.main-content figure {
-    max-width: 25rem;
-}
-
 .a-menu {
-    padding-left: 30px;
     list-style: none;
-}
-.a-menu .a-menu__item {
-    transition: .25s all ease-in-out;
-    width: max-content;
-    padding-left: 1rem;
-    background: url(../images/right-arrow-blue.svg) no-repeat center left;
-    background-size: 0.5rem;
-    &:hover
-    {
-        padding-left: 1.25rem;
-        color:$color-blue-dark;
-        font-weight: 900;
-    }
-    & .a-menu__link:focus
-    {
-        padding-left: 1.25rem;
-        color:$color-blue-dark;
-        font-weight: 900;
+
+    .a-menu__item {
+        transition: .25s all ease-in-out;
+        width: max-content;
+        padding-left: 1rem;
+        background: url(../images/right-arrow-blue.svg) no-repeat center left;
+        background-size: 0.5rem;
+
+        &:hover {
+            padding-left: 1.25rem;
+            color: $color-dark-blue;
+            font-weight: 900;
+        }
+
+        .a-menu__link {
+            color: $color-dark-blue;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            &:focus {
+                padding-left: 1.25rem;
+                color: $color-dark-blue;
+                font-weight: 900;
+                text-decoration: none;
+            }
+        }
     }
 }
 
-.a-menu .a-menu__item .a-menu__link {
-    color:$color-blue-dark;
-    text-decoration: underline;
-    &:hover
-    {
-        text-decoration: none;
-    }
-    &:focus
-    {
-        text-decoration: none;
-    }    
+.pane {
+    clear: both;
 }
 
-.pane
-{
-   clear: both;
-}
-.content-pane{
+.content-pane {
     width: -webkit-fill-available;
 }
 
@@ -107,254 +104,341 @@
     position: relative;
     padding-top: 18rem;
     background: url(../images/Green_Mountain_BG.png) repeat-x top center;
+
+    &:before {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background-image: linear-gradient(to bottom, transparent 0%, $color-dull-yellow-green 0%);
+    }
 }
 
-.community:before {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    content: "";
-    background-image: linear-gradient(to bottom, transparent 0%, $color-green-light 0%);
-}
-.main-content .community *{
-    color: $color-white;
-}
 .community__grid {
     display: flex;
     flex-wrap: wrap;
-    padding: 5rem 4rem 2rem 4rem;
-}
-.community__grid .community__head {
-    flex:1;
-    margin-bottom: 20px;
-    @include breakpoint(medium)
-    {
-        flex-basis: 100%;
+    padding: 5rem 2rem 2rem 2rem;
+
+    .community__head {
+        flex: 1;
+        margin-bottom: 20px;
+
+        @include breakpoint(medium) {
+            flex-basis: 100%;
+        }
+
+        @include breakpoint(small) {
+            flex-basis: 100%;
+        }
+
+        @include breakpoint(extra-small) {
+            flex-basis: 100%;
+        }
+
+        h2 {
+            position: relative;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            color: $color-white;
+            font-family: $font-fam-alfa;
+            font-size: 1.85rem;
+        }
+
+        p {
+            font-size: 1rem;
+            color: $color-white;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            font-family: $font-fam-roboto;
+        }
     }
-    @include breakpoint(small)
-    {
-        flex-basis: 100%;
+
+    .community__item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        color: $color-white;
+        margin-bottom: 20px;
+
+        h5 {
+            font-family: $font-fam-roboto;
+            margin-bottom: 0.5rem;
+            padding-bottom: 1rem;
+            font-size: 1.65rem;
+        }
+
+        ul {
+            margin-bottom: 1rem;
+            padding-inline-start: 30px;
+        }
+
+        @include breakpoint(medium) {
+            flex-basis: 100%;
+        }
+
+        @include breakpoint(small) {
+            flex-basis: 100%;
+
+        }
+
+        @include breakpoint(extra-small) {
+            flex-basis: 100%;
+
+        }
+
+        &:nth-child(2) {
+            @include breakpoint(large) {
+                padding-left: 1rem;
+            }
+
+            @include breakpoint(extra-large) {
+                padding-left: 1rem;
+            }
+        }
+
+        &:nth-child(2) {
+            @include breakpoint(large) {
+                padding-left: 1rem;
+            }
+
+            @include breakpoint(extra-large) {
+                padding-left: 1rem;
+            }
+        }
+
+        &:nth-child(3) {
+            @include breakpoint(large) {
+                padding-left: 1rem;
+                border-left: 1px solid;
+                @include rgba-border($color-white, $opacity);
+            }
+
+            @include breakpoint(extra-large) {
+                padding-left: 1rem;
+                border-left: 1px solid;
+                @include rgba-border($color-white, $opacity);
+            }
+        }
+
+        &:last-child {
+            @include breakpoint(large) {
+                padding-left: 1rem;
+                border-left: 1px solid;
+                @include rgba-border($color-white, $opacity);
+            }
+
+            @include breakpoint(extra-large) {
+                padding-left: 1rem;
+                border-left: 1px solid;
+                @include rgba-border($color-white, $opacity);
+            }
+        }
+
+        .cta {
+            transition: all 0.25s ease-in-out;
+            padding-right: 1rem;
+            color: $color-white;
+            background: url(../images/right-arrow-heavy.svg) no-repeat right center;
+            background-size: 0.75rem;
+            font-family: $font-fam-roboto;
+            font-weight: bold;
+
+            &:hover {
+                padding-right: 1.25rem
+            }
+
+            &:focus {
+                padding-right: 1.25rem
+            }
+        }
 
     }
-    @include breakpoint(extra-small)
-    {
-        flex-basis: 100%;
-
-    }
-
-}
-.community__grid .community__item {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    color: $color-white;
-    margin-bottom: 20px;
-
-    @include breakpoint(medium)
-    {
-        flex-basis: 100%;
-    }
-    @include breakpoint(small)
-    {
-        flex-basis: 100%;
-
-    }
-    @include breakpoint(extra-small)
-    {
-        flex-basis: 100%;
-
-    }
-}
-.community__grid .community__item:nth-child(2) {
-    @include breakpoint(large)
-    {     
-    padding-left: 2rem;
-    }
-    @include breakpoint(extra-large)
-    {     
-    padding-left: 2rem;
-    }
-}
-.community__grid .community__item:nth-child(3) {
-    @include breakpoint(large)
-    {  
-        padding-left: 3rem;
-        border-left: 1px solid $color-white-alpha;
-    }
-    @include breakpoint(extra-large)
-    {  
-        padding-left: 3rem;
-        border-left: 1px solid $color-white-alpha;
-    }
-}
-.community__grid .community__item:last-child {
-    @include breakpoint(large)
-    {  
-        padding-left: 3rem;
-        border-left: 1px solid $color-white-alpha;
-    }
-    @include breakpoint(extra-large)
-    {  
-        padding-left: 3rem;
-        border-left: 1px solid $color-white-alpha;
-    }
 }
 
-.community__grid .community__head h2 {
-    position: relative;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    color:$color-white;
-    font-family: $font-fam-alfa;
-    font-size: 1.85rem;
-}
-.community__grid .community__head p, .cards__grid .cards__head p 
-{
+.cards__grid .cards__head p {
     font-size: 1rem;
     color: $color-white;
     font-weight: 400;
     margin-bottom: 1rem;
     font-family: $font-fam-roboto;
 }
-.community__grid .community__item h5 {
-    font-family: $font-fam-roboto;
-    margin-bottom: 0.5rem;
-    padding-bottom: 1rem;
-    font-size: 1.65rem;
-}
-.community__grid .community__item ul
-{  
-    margin-bottom: 1rem;
-    padding-inline-start: 30px;
-}
-.community__grid .community__item .cta 
-{   
-    transition: all 0.25s ease-in-out;
-    padding-right: 1rem;
-    color: $color-white;
-    background: url(../images/right-arrow-heavy.svg) no-repeat right center;
-    background-size: 0.75rem;
-    font-family: $font-fam-roboto;
-    font-weight: bold;
-    &:hover
-    {
-        padding-right: 1.25rem
-    }
-    &:focus
-    {
-        padding-right: 1.25rem
-    }
-}
 
-.cards__item *, .community__item * 
-{
+.cards__item *,
+.community__item * {
     max-width: 100%;
 }
-.cards 
-{
+
+.cards {
     padding: 3rem 0;
-    background: $color-blue-lighter;
+    background: $color-light-grayish-blue;
 }
 
-.cards__grid 
-{ 
+.cards__grid {
     display: flex;
     flex-wrap: wrap;
-    padding: 0rem 4rem;
+    padding: 0rem 2rem;
     justify-content: space-between;
-}
-.cards__grid .cards__head 
-{
-    padding-right: 1rem;
-    flex: 1;
-    margin-bottom: 20px;
 
-    @include breakpoint(medium)
-    {
-        flex-basis: 100%;
-    }
-    @include breakpoint(small)
-    {
-        flex-basis: 100%;
+    .cards__head {
+        padding-right: 1rem;
+        flex: 1;
 
-    }
-    @include breakpoint(extra-small)
-    {
-        flex-basis: 100%;
+        @include breakpoint(medium) {
+            flex-basis: 100%;
+            margin-bottom: 20px;
+            padding-right: 0rem;
+        }
 
-    }
-}
-.cards__grid .cards__head h2 {
-    position: relative;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    color: $color-blue-light;
-    font-family: $font-fam-alfa;
-}
-.cards__grid .cards__head p
-{
- color:$color-black;   
-}
-.cards__grid .cards__item {
-    position: relative;
-    flex: 1;
-    @include display_flex(column,nowrap);
-    justify-content: center;
-    padding: 2rem;
-    text-align: center;
-    color: $color-white;
-    background: $color-blue-dark;
-    margin-right: 1.25rem;
-    margin-bottom: 20px;
+        @include breakpoint(small) {
+            flex-basis: 100%;
+            margin-bottom: 20px;
+            padding-right: 0rem;
+        }
 
-    @include breakpoint(medium)
-    {
-        flex-basis: 100%;
-    }
-    @include breakpoint(small)
-    {
-        flex-basis: 100%;
+        @include breakpoint(extra-small) {
+            flex-basis: 100%;
+            margin-bottom: 20px;
+            padding-right: 0rem;
+        }
 
-    }
-    @include breakpoint(extra-small)
-    {
-        flex-basis: 100%;
+        h2 {
+            position: relative;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            color: $color-strong-blue;
+            font-family: $font-fam-alfa;
+        }
 
+        p {
+            color: $color-black;
+        }
     }
-}
-.cards__grid .cards__item h3 {
-    font-family: $font-fam-roboto;
-    font-size: 1.5rem;
-    padding-bottom: 1rem;
-}
-.cards__grid .cards__item p {
-    padding-bottom: 2.75rem;
-    font-size: 1rem;
-    width: 100%;
-}
-.cards__grid .cards__item .button--cta {
-    position: absolute;
-    bottom: 2rem;
-    border: 2px solid $color-white;
-    background: $color-blue-dark;
-    text-transform: capitalize;
-    font-weight: bold;
-    left: 0;
-    right: 0;
-    margin: 0 6%;
-    &:hover
-    {
-    color: $color-blue-dark;
-    background: $color-white;
-    }
-    &:focus
-    {
-    color: $color-blue-dark;
-    background: $color-white;
+
+    .cards__item {
+        position: relative;
+        flex: 1;
+        @include display_flex(column, nowrap);
+        justify-content: center;
+        padding: 2rem;
+        text-align: center;
+        color: $color-white;
+        background: $color-dark-blue;
+        margin-right: 1rem;
+
+        &:last-child {
+            margin-right: 0rem;
+        }
+
+        @include breakpoint(medium) {
+            flex-basis: 100%;
+            margin-right: 0rem;
+            margin-bottom: 20px;
+        }
+
+        @include breakpoint(small) {
+            flex-basis: 100%;
+            margin-right: 0rem;
+            margin-bottom: 20px;
+
+        }
+
+        @include breakpoint(extra-small) {
+            flex-basis: 100%;
+            margin-right: 0rem;
+            margin-bottom: 20px;
+
+        }
+
+        h3 {
+            font-family: $font-fam-roboto;
+            font-size: 1.5rem;
+            padding-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1rem;
+            width: 100%;
+            overflow: hidden;
+            /* to set '...' in absolute position */
+            position: relative;
+            /* use this value to count block height */
+            line-height: 1.2em;
+            /* max-height = line-height (1.2) * lines max number (12) */
+            max-height: 14.4em;
+
+            /* create the ... */
+            &:before {
+                /* points in the end */
+                content: '...';
+                /* absolute position */
+                position: absolute;
+                /* set position to right bottom corner of block */
+                right: 0;
+                bottom: 0;
+            }
+
+            /* hide ... if we have text, which is less than or equal to max lines */
+            &:after {
+                /* points in the end */
+                content: '';
+                /* absolute position */
+                position: absolute;
+                /* set position to right bottom corner of text */
+                right: 0;
+                width: 1em;
+                /* set width and height */
+                height: 1em;
+                margin-top: 0.2em;
+                background: $color-dark-blue;
+            }
+
+            //line clamp code
+            //             overflow: hidden;
+            //             display: -webkit-box;
+            //   -webkit-line-clamp: 3;
+            //   -webkit-box-orient: vertical;  
+
+
+        }
+
+        .button--cta {
+
+            position: absolute;
+            bottom: 2rem;
+            border: 2px solid $color-white;
+            background: $color-dark-blue;
+            text-transform: capitalize;
+            font-weight: bold;
+            left: 0;
+            right: 0;
+            margin: 0 6%;
+            @include breakpoint(medium) {
+                position: relative;
+                top: 1rem;
+            }
+            @include breakpoint(small) {
+                position: relative;
+                top: 1rem;
+            }
+            @include breakpoint(extra-small) {
+                position: relative;
+                top: 1rem;
+            }
+
+            &:hover {
+                color: $color-dark-blue;
+                background: $color-white;
+            }
+
+            &:focus {
+                color: $color-dark-blue;
+                background: $color-white;
+            }
+        }
     }
 }

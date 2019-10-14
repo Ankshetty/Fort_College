@@ -1,56 +1,41 @@
-@import "../base/base";
-
-
 img {
     max-width: 100%;
     height: auto;
     vertical-align: middle;
 }
-figure.img-align-right {
-    float: right;
-    margin-left: 1.5rem;
-   
-    @include breakpoint(small)
-    {
-        float: none;
-        margin-left: 0rem;
 
-    }
-    @include breakpoint(extra-small)
-    {
-        float: none;
-        margin-left: 0rem;
-    }
-}
 figure {
     margin: 0 0 1.5rem 0;
-}
+    &.img-align-right {
+        float: right;
+        margin-left: 1.5rem;
 
-figure.img-align-right>img {
-    width: 100%;
-    height: auto;
-}
-figure.img-align-left {
-    float: left;
-    margin-right: 1.5rem;
-    @include breakpoint(small)
-    {
-        float: none;
-        margin-right: 0rem;
+        @include breakpoint(small) {
+            float: none;
+            margin-left: 0rem;
 
+        }
+
+        @include breakpoint(extra-small) {
+            float: none;
+            margin-left: 0rem;
+        }
     }
-    @include breakpoint(extra-small)
-    {
-        float: none;
-        margin-right: 0rem;
+
+    &.img-align-left {
+        float: left;
+        margin-right: 1.5rem;
+        
+        @include breakpoint(small) {
+            float: none;
+            margin-right: 0rem;
+
+        }
+
+        @include breakpoint(extra-small) {
+            float: none;
+            margin-right: 0rem;
+        }
     }
 }
 
-figure.img-align-left>img {
-    width: inherit;
-}
-
-figure.img-align-left>img {
-    width: 100%;
-    height: auto;
-}

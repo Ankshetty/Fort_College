@@ -77,3 +77,18 @@ document.getElementById("toggleNav").addEventListener("click", function() {
 
 
 });
+
+// $(document).ready(function(){
+//     $('.banner-class').slick({
+//         autoplay: true,
+//     autoplaySpeed: 1000,
+//     dots: false,
+//     infinite: false,
+//     speed: 1000,
+//     fade: true,
+//     slide: 'div',
+//     cssEase: 'linear'
+//     });
+//   });
+
+  
